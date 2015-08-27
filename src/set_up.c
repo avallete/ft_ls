@@ -25,6 +25,8 @@ void	set_up(char *argv, char *choice)
 	initialize_infos(infos);
 	if (choice[5])
 		call_setup(tree, choice);
+	if (tree)
+		ltree_delete(&tree);
 }
 
 void	print_dir(char *name, char *choice)

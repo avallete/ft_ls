@@ -27,6 +27,7 @@ void	args_one(char *choice, char *pathname)
 		else if ((test_linkdest(tree->infos)))
 			choice[0] ? print_lsl(&tree->infos, keep_infos, choice) :\
 				print_ls(&tree->infos, choice);
+		ltree_delete(&tree);
 	}
 }
 

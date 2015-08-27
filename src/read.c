@@ -31,24 +31,27 @@ void		ls_file(t_ltree **tree, char *pathname, \
 
 size_t		*ls_read_stat(t_ltree **tree, char *pathname, char *choice)
 {
-	struct dirent	*file;
-	DIR				*rep;
+	struct dirent		*file;
+	DIR			*rep;
 	t_llstat		statsfile;
-	static size_t	keep_infos[6] = {0};
+	char			*tmp;
+	static size_t		keep_infos[6] = {0};
 
+	tmp = NULL;
 	if ((rep = opendir(pathname)))
 	{
 		if (!(check_slash(pathname)))
-			pathname = ft_strjoin(pathname, "/");
+			tmp = ft_strjoin(pathname, "/");
 		while ((file = readdir(rep)))
 		{
-			take_name(&statsfile, pathname, file->d_name);
+			take_name(&statsfile, tmp ? tmp : pathname, file->d_name);
 			if (((lstat(statsfile.pathname, &statsfile.stats))) != -1)
 				take_stats(&statsfile, keep_infos, choice, tree);
 			else
 				print_error(statsfile.filename);
 		}
 		closedir(rep);
+		tmp ? free(tmp) : 0;
 	}
 	else if (errno == ENOENT || errno == ENOTDIR)
 		ls_file(tree, pathname, choice, keep_infos);
