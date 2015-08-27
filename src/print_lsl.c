@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 14:13:56 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 16:50:27 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 23:36:33 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void print_devices(dev_t dev)
 	maj = MAJ(dev);
 	min = MIN(dev);
 	f = 4 - ft_nbrlen(maj);
-	while (i++ != f)
+	while (i++ < f)
 		ft_putchar(' ');
 	ft_putnbr(maj);
 	i = 0;
 	ft_putstr(",");
 	f = 4 - ft_nbrlen(min);
-	while (i++ != f)
+	while (i++ < f)
 		ft_putchar(' ');
 	ft_putnbr(min);
 	ft_putchar(' ');

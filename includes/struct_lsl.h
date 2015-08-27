@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:18:25 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 16:21:22 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 23:41:16 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 **Macros st_rdev--------------------
 */
 
-# define MINORBITS				24
-# define MINORMASK				((1U << MINORBITS) - 1)
-# define MAJ(dev)				((dev) >> MINORBITS)
-# define MIN(dev)				((dev) & MINORMASK)
+#define MAJ(dev)      			((dev)>>8)
+#define MIN(dev)      			((dev) & 0xff)
 # define FIRST(rev, tree)		((rev > 0 ? tree->right : tree->left))
 # define LAST(rev, tree)		((rev > 0 ? tree->left : tree->right))
 
