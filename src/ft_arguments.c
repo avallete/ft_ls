@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/29 16:14:51 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:10:05 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 16:23:50 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void		argument_sort(char **argv, int *tab, char *choice)
 	{
 		print_files_args(args, keep_infos, choice);
 		print_dir_args(args, choice);
+		ltree_delete(&args);
 	}
 }
 

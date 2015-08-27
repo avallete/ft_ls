@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 16:44:53 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:10:51 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 16:22:31 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	args_one(char *choice, char *pathname)
 		else if ((test_linkdest(tree->infos)))
 			choice[0] ? print_lsl(&tree->infos, keep_infos, choice) :\
 				print_ls(&tree->infos, choice);
+		ltree_delete(&tree);
 	}
 }
 

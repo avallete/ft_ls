@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_up.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 12:41:41 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/06 11:28:28 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 16:21:33 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	set_up(char *argv, char *choice)
 	initialize_infos(infos);
 	if (choice[5])
 		call_setup(tree, choice);
+	if (tree)
+		ltree_delete(&tree);
 }
 
 void	print_dir(char *name, char *choice)

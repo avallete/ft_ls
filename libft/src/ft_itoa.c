@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:41:35 by avallete          #+#    #+#             */
-/*   Updated: 2014/11/08 19:20:53 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 15:34:13 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ static void		ft_len(int n, size_t *size, int *e)
 {
 	*size = 1;
 	if (n >= 0)
-	{
-		*size = 0;
 		n = -n;
-	}
 	*e = 1;
 	while (n / *e < -9)
 	{
@@ -36,7 +33,7 @@ char			*ft_itoa(int n)
 	char	*result;
 
 	ft_len(n, &size, &e);
-	if ((result = (char*)malloc(sizeof(*result) * (size + 1))))
+	if ((result = (char*)malloc(sizeof(char) * (size + 1))))
 	{
 		i = 0;
 		if (n < 0)

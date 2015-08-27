@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct_lsl.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:18:25 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/07 13:18:27 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 16:21:22 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ char							ft_oldtime(int32_t timefile);
 */
 void							ltree_insert_data(t_ltree **tree, \
 								t_llstat data, int (*f)(t_llstat, t_llstat));
+void							ltree_delete(t_ltree **tree);
 
 /*
 ** ----------
