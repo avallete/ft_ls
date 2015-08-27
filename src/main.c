@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/25 16:44:53 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/06 12:41:56 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 14:10:51 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ void	set_up_argv(int argc, char **argv, int i, char *choice)
 int		main(int argc, char **argv)
 {
 	int		i;
-	char	choice[10];
+	char	choice[11];
 
 	choice[6] = 0;
 	if (verify_argv(argc, argv))
 	{
-		ft_bzero(choice, 10);
-		choice[10] = 0;
+		ft_bzero(choice, 11);
 		if (argc == 1)
 			set_up(".", choice);
 		if (argc > 1)

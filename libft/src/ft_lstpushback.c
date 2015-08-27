@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 12:38:28 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:25:14 by avallete         ###   ########.fr       */
+/*   Created: 2014/11/10 12:30:47 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/29 19:31:59 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <dirent.h>
-# include <pwd.h>
-# include <grp.h>
-# include <sys/xattr.h>
-# include <time.h>
-# include <stdio.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/acl.h>
-# include <acl/libacl.h>
-# include <libft.h>
-# include <struct_lsl.h>
-#endif
+#include "libft.h"
+
+void	ft_lstpushback(t_list **alst, t_list *new)
+{
+	t_list *begin;
+
+	begin = *alst;
+	if (new)
+	{
+		while (begin->next != NULL)
+			begin = begin->next;
+		begin->next = new;
+		new->next = NULL;
+	}
+}

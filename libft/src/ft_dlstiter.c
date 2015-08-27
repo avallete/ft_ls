@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   ft_dlstiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 12:38:28 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:25:14 by avallete         ###   ########.fr       */
+/*   Created: 2015/05/30 00:40:08 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/30 00:46:49 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <dirent.h>
-# include <pwd.h>
-# include <grp.h>
-# include <sys/xattr.h>
-# include <time.h>
-# include <stdio.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/acl.h>
-# include <acl/libacl.h>
-# include <libft.h>
-# include <struct_lsl.h>
-#endif
+#include "libft.h"
+
+void ft_dlstiter(t_dlst *list, void (*f)(t_dlst *elem))
+{
+    if (list)
+    {
+        while (list->back)
+            list = list->back;
+        while (list)
+            f(list), list = list->next;
+    }
+}

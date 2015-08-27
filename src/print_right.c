@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_right.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 12:41:11 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/05 12:41:12 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 14:57:38 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void print_extended(t_llstat *stats)
 	char attr[256];
 
 	ft_bzero(attr, 256);
-	listxattr(stats->pathname, attr, 255, XATTR_NOFOLLOW);
+	listxattr(stats->pathname, attr, 255);
 	if (ft_strlen(attr) > 0)
 		ft_putchar('@');
-	else if (acl_get_file(stats->pathname, ACL_TYPE_EXTENDED))
+	else if (acl_extended_file(stats->pathname) > 0)
 		ft_putchar('+');
 	else
 		ft_putchar(' ');

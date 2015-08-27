@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 12:38:28 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:25:14 by avallete         ###   ########.fr       */
+/*   Created: 2014/11/03 14:41:36 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/25 05:16:29 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <dirent.h>
-# include <pwd.h>
-# include <grp.h>
-# include <sys/xattr.h>
-# include <time.h>
-# include <stdio.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/acl.h>
-# include <acl/libacl.h>
-# include <libft.h>
-# include <struct_lsl.h>
-#endif
+#include "libft.h"
+
+char *ft_strstr(const char *s1, const char *s2)
+{
+	size_t i;
+	size_t e;
+
+	i = 0;
+	e = 0;
+	if (s2[0] == '\0' || s2 == NULL)
+		return ((char*)s1);
+	if (s1 && s2)
+	{
+		while (s1[i] != '\0')
+		{
+			e = 0;
+			while (s1[i] == s2[e])
+			{
+				e++;
+				i++;
+				if (e == ft_strlen(s2))
+					return ((char*)&s1[i - (ft_strlen(s2))]);
+			}
+			i++;
+		}
+	}
+	return (NULL);
+}

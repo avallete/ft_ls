@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   ft_dlstnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 12:38:28 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:25:14 by avallete         ###   ########.fr       */
+/*   Created: 2015/05/28 02:48:17 by avallete          #+#    #+#             */
+/*   Updated: 2015/06/02 03:12:54 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <dirent.h>
-# include <pwd.h>
-# include <grp.h>
-# include <sys/xattr.h>
-# include <time.h>
-# include <stdio.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/acl.h>
-# include <acl/libacl.h>
-# include <libft.h>
-# include <struct_lsl.h>
-#endif
+#include "libft.h"
+
+t_dlst  *ft_dlstnew(void *content, size_t content_size)
+{
+    t_dlst *new;
+
+    if ((new = (t_dlst*)malloc(sizeof(t_dlst))))
+    {
+        new->content = content;
+        new->content_size = content_size;
+        new->next = NULL;
+        new->back = NULL;
+    }
+    return (new);
+}

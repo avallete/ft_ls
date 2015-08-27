@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.h                                            :+:      :+:    :+:   */
+/*   ft_putlongnbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 12:38:28 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 14:25:14 by avallete         ###   ########.fr       */
+/*   Created: 2015/01/16 12:51:55 by avallete          #+#    #+#             */
+/*   Updated: 2015/05/31 06:15:05 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LS_H
-# define FT_LS_H
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include <dirent.h>
-# include <pwd.h>
-# include <grp.h>
-# include <sys/xattr.h>
-# include <time.h>
-# include <stdio.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/acl.h>
-# include <acl/libacl.h>
-# include <libft.h>
-# include <struct_lsl.h>
-#endif
+#include <ft_printf.h>
+
+void	ft_putlongnbr(long int nb)
+{
+	if (nb >= 0 && nb <= 9)
+		ft_putchar('0' + nb);
+	else
+	{
+		ft_putlongnbr(nb / 10);
+		ft_putlongnbr(nb % 10);
+	}
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arguments.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/29 16:14:51 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/06 15:43:50 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/27 14:10:05 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,19 @@
 
 int			ft_arg(char *c, char e)
 {
-	if (e != 'l' && e != 't' && e != 'a' && e != 'r' && e != 'R' && e != '1'\
-		&& e != 'A' && e != 'u' && e != 'U' && e != 'S' && e != 'c' && e != 'g')
+	if (!ft_strchr("ltarR1AuScg", e))
 	{
 		ft_putsterr("ls : illegal option -- ");
 		ft_putcerr(e);
 		ft_putcerr('\n');
-		ft_putsterr("usage : ls [-ltarR1AuUScg] [file ...]\n");
+		ft_putsterr("usage : ls [-ltarR1AuScg] [file ...]\n");
 		return (-1);
 	}
+	c[9] = 0;
 	e == '1' ? (c[0] = 0) : (c[0] += 0);
-	e == 'u' ? (c[8] = 1), \
-	(c[9] = 0) : (c[8] += 0);
-	e == 'c' ? (c[8] = 2), \
-	(c[9] = 0) : (c[8] += 0);
-	e == 'U' ? (c[9] = 1) : (c[9] += 0);
-	e == 'S' ? (c[10] = 1), \
-	(c[1] = 0) : (c[10] += 0);
+	e == 'u' ? (c[8] = 1) : 0;
+	e == 'c' ? (c[8] = 2) : 0;
+	e == 'S' ? (c[10] = 1), (c[1] = 0) : 0;
 	e == 'l' ? (c[0] = 1) : (c[0] += 0);
 	e == 'g' ? (c[0] = 2) : (c[0] += 0);
 	e == 't' ? (c[1] = 1) : (c[1] += 0);

@@ -17,12 +17,10 @@ time_t		take_time(char *choice, t_llstat *statstree)
 	if (choice[8] && (!choice[9]))
 	{
 		if (choice[8] == 1)
-			return (statstree->stats.st_atimespec.tv_sec);
-		return (statstree->stats.st_ctimespec.tv_sec);
+			return (statstree->stats.st_atim.tv_sec);
+		return (statstree->stats.st_ctim.tv_sec);
 	}
-	if (choice[9])
-		return (statstree->stats.st_birthtimespec.tv_sec);
-	return (statstree->stats.st_mtimespec.tv_sec);
+	return (statstree->stats.st_mtim.tv_sec);
 }
 
 int			init_lstat(t_llstat *statstree, char *choice)
