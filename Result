@@ -1,0 +1,54 @@
+True LS:
+Valgrind result:
+==22834== HEAP SUMMARY:
+==22834==     in use at exit: 344,856 bytes in 19 blocks
+==22834==   total heap usage: 1,143,421 allocs, 1,143,402 frees, 1,389,752,412 bytes allocated
+==22834==
+==22834== LEAK SUMMARY:
+==22834==    definitely lost: 0 bytes in 0 blocks
+==22834==    indirectly lost: 0 bytes in 0 blocks
+==22834==      possibly lost: 0 bytes in 0 blocks
+==22834==    still reachable: 344,856 bytes in 19 blocks
+==22834==         suppressed: 0 bytes in 0 blocks
+==22834== Reachable blocks (those to which a pointer was found) are not shown.
+==22834== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==22834==
+==22834== For counts of detected and suppressed errors, rerun with: -v
+==22834== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Time:
+1.83user 7.93system 0:52.46elapsed 18%CPU (0avgtext+0avgdata 3640maxresident)k
+0inputs+0outputs (0major+288minor)pagefaults 0swaps
+
+Result without buffering:
+Valgrind result:
+==24128==
+==24128== HEAP SUMMARY:
+==24128==     in use at exit: 0 bytes in 0 blocks
+==24128==   total heap usage: 3,656,228 allocs, 3,656,228 frees, 2,044,671,481 bytes allocated
+==24128==
+==24128== All heap blocks were freed -- no leaks are possible
+==24128==
+==24128== For counts of detected and suppressed errors, rerun with: -v
+==24128== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+
+Time:
+3.58user 16.84system 1:00.09elapsed 33%CPU (0avgtext+0avgdata 3132maxresident)k
+0inputs+0outputs (0major+1156171minor)pagefaults 0swaps
+
+
+Result buffering:
+Valgrind result:
+==22662==
+==22662== HEAP SUMMARY:
+==22662==     in use at exit: 0 bytes in 0 blocks
+==22662==   total heap usage: 2,389,117 allocs, 2,389,117 frees, 3,398,918,029 bytes allocated
+==22662==
+==22662== All heap blocks were freed -- no leaks are possible
+==22662==
+==22662== For counts of detected and suppressed errors, rerun with: -v
+==22662== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+
+Time:
+7.60user 11.44system 0:54.24elapsed 35%CPU (0avgtext+0avgdata 18464maxresident)k
+0inputs+0outputs (0major+1255443minor)pagefaults 0swaps
