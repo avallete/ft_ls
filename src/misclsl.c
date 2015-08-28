@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 10:53:10 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 16:48:21 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 13:19:33 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,10 @@ void			test_sizeinfos(t_llstat *statsfile, size_t *infos, char *choice)
 	{
 		if (ft_nbrlen(statsfile->nbhlink) > infos[0])
 			infos[0] = ft_nbrlen(statsfile->nbhlink);
-		if (statsfile->owner)
-		{
-			if (ft_strlen(statsfile->owner) > infos[1])
+		if (ft_strlen(statsfile->owner) > infos[1])
 				infos[1] = ft_strlen(statsfile->owner);
-		}
-		if (statsfile->group)
-		{
-			if (ft_strlen(statsfile->group) > infos[2])
+		if (ft_strlen(statsfile->group) > infos[2])
 				infos[2] = ft_strlen(statsfile->group);
-		}
 		if (ft_nbrlen(statsfile->size) > infos[3])
 			infos[3] = ft_nbrlen(statsfile->size);
 		if (ft_oldtime(statsfile->date))

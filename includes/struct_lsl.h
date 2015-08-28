@@ -6,12 +6,15 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:18:25 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 23:41:16 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 12:59:28 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_LSL_H
 # define STRUCT_LSL_H
+# include <limits.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 
 /*
 **Macros st_rdev--------------------
@@ -28,12 +31,12 @@ typedef struct					s_llstat
 	char						filetype;
 	mode_t						accesright;
 	int							nbhlink;
-	char						*owner;
-	char						*group;
+	char						owner[NAME_MAX];
+	char						group[NAME_MAX];
 	off_t						size;
 	time_t						date;
-	char						*filename;
-	char						*pathname;
+	char						filename[NAME_MAX];
+	char						pathname[PATH_MAX];
 	dev_t						dev;
 }								t_llstat;
 

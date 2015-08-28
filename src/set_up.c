@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 12:41:41 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 16:21:33 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 20:05:13 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	set_up(char *argv, char *choice)
 void	print_dir(char *name, char *choice)
 {
 	if (choice[6])
-		ft_putchar('\n');
+		ft_bufferize(1, "\n", false);
 	choice[6] = 1;
-	ft_putstr(name);
-	ft_putendl(":");
+	ft_bufferize(1, name, false);
+	ft_bufferize(1, ":\n", false);
 }
 
 void	call_setup(t_ltree *args, char *choice)

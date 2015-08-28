@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   misc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avallete <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/29 16:12:51 by avallete          #+#    #+#             */
-/*   Updated: 2015/01/06 11:37:47 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 15:19:54 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void		initialize_infos(size_t *infos)
 void		ft_printls(char *filename, char hide)
 {
 	if ((hide))
-		ft_putendl(filename);
+		ft_bufferize(1, filename, false);
 	else
 	{
 		if (filename[0] != '.')
-			ft_putendl(filename);
+			ft_bufferize(1, filename, false);
 	}
 }
 

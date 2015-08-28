@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_bufferize.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 14:41:35 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/28 13:26:37 by avallete         ###   ########.fr       */
+/*   Created: 2015/08/28 11:05:07 by avallete          #+#    #+#             */
+/*   Updated: 2015/08/28 14:26:38 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_BUFFERIZE
+# define FT_BUFFERIZE
+# include "libft.h"
+# include <stdbool.h>
+# define BUFFERIZE_SIZE 4096
 
-char	*ft_strcat(char *s1, const char *s2)
-{
-	ft_strcpy(s1 + ft_strlen(s1), s2);
-	return (s1);
-}
+int     ft_bufferize(int fd, char *str, bool flush);
+#endif

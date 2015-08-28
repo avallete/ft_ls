@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:12:59 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 17:14:40 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 14:04:22 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void		take_name(t_llstat *statsfile, char *pathname, char *filename)
 {
-	statsfile->filename = ft_strdup(filename);
-	statsfile->pathname = ft_strjoin(pathname, filename);
+	ft_strcpy(statsfile->filename, filename);
+	ft_strcpy(statsfile->pathname, pathname);
+	ft_strcat(statsfile->pathname, filename);
 }
 
 void		take_stats(t_llstat *statsfile, size_t *keep_infos, \

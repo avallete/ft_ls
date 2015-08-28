@@ -6,7 +6,7 @@
 /*   By: avallete <avallete@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/30 10:18:19 by avallete          #+#    #+#             */
-/*   Updated: 2015/08/27 16:21:29 by avallete         ###   ########.fr       */
+/*   Updated: 2015/08/28 12:59:55 by avallete         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ void	ltree_delete(t_ltree **tree)
 	{
 		if ((*tree)->right)
 			ltree_delete(&(*tree)->right);
-		free((*tree)->infos.owner);
-		free((*tree)->infos.group);
-		free((*tree)->infos.filename);
-		free((*tree)->infos.pathname);
 		if ((*tree)->left)
 			ltree_delete(&(*tree)->left);
 		free((*tree));
