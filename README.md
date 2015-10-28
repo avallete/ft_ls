@@ -1,5 +1,10 @@
 # ft_ls
 A copy of fuction ls in MacOSX
+
+#Grade
+![Grade image](/ftls_grade.png?raw=true)
+
+
 # Overview
 This school project reproduce some features of ls command based on OSX default behavior.
 It was made respecting the school norm. This explains that there was no loop and cutting of certain functions.
